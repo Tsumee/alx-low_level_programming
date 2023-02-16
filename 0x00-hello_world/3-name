@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc $CFILE -o cistun
+gcc $CFILE -O cistun
