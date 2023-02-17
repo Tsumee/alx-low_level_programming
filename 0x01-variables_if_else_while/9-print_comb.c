@@ -7,27 +7,20 @@
 int main(void)
 {
 	/*
-	 * prints all combination of 2 different digits once,in accending order
-	 * after each combination follows a coma and a space
+	 * prints all single integers, with comma and space after
+	 * loops through 0-9, prints them,prints comma,print space,
+	 * use only putchar
 	 */
+	int x;
 
-	/* take ab as possible digits */
-	int a, b;
-
-	/*loop through a,1st digit,lowest of the 2, highest possible is 8*/
-	for (a = 0 ; a <= 8 ; a++)
+	for (x = 0 ; x < 10 ; x++)
 	{
-		/*loop through b,2nd digit,higher than a by 1,highest possible is 9*/
-		for (b = a + 1 ; b <= 9 ; b++)
-		{
-			putchar((a % 10) + '0');
-			putchar((b % 10) + '0');
-			/*continues to put coma,space,stop if last highest combination is met*/
-			if (a == 8 && b == 9)
-				continue;
-			putchar(',');
-			putchar(' ');
-		}
+		putchar((x % 10) + '0');
+		if (x == 9)
+		/*continue printing comma and space except if x == 9*/
+			continue;
+		putchar(',');
+		putchar(' ');
 	}
 	putchar('\n');
 	return (0);
